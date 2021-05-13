@@ -2,10 +2,10 @@ const express = require('express'); //Es un servidor//
 const engine = require('ejs-mate');
 const morgan = require('morgan');
 const path = require('path');
-const { dirname } = require('path');
 
 //Init
 const app = express(); //App es una variable, como la base del programa// 
+require('./config/db');
 
 
 //Configuraciones
