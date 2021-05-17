@@ -14,10 +14,11 @@ app.set('views', path.join(__dirname, 'view')); //View es lo que el usuario pued
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 app.use(morgan('dev')); //morgan es la peticiones esta haciendo el usuario//
+app.use(express.urlencoded({extended: false}));
 
 //Rutas
 app.use(require('./routes/index.routes'));  //Rutas 
-
+app.use(require('./routes/productos.routes')); 
 //Archivos estaticos
 app.use(express.static(path.join(__dirname, 'public'))); //aca utilizo la carpeta public
 

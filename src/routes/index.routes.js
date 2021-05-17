@@ -9,9 +9,6 @@ router.get('/inicio', (req, res) =>{  //Estamos creando una ruta que seria inici
     res.render('inicio')  //es lo que imprime//  
 });
 
-router.get('/productos', (req, res) =>{  //Estamos creando una ruta que seria productos//
-    res.render('productos')  //es lo que imprime//  
-});
 
 router.get('/clientes', (req, res) =>{  //Estamos creando una ruta que seria clientes//
     res.render('clientes')  //es lo que imprime//  
@@ -30,10 +27,6 @@ router.get('/cobranzas', (req, res) =>{  //Estamos creando una ruta que seria fa
 }); 
 router.get('/agregar_cliente', (req, res) =>{  //Estamos creando una ruta que agregar cliente(llevara para hacer el registro del cliente nuevo//
     res.render('agregar_cliente')  //es lo que imprime//  
-});
-
-router.get('/agregar_producto', (req, res) =>{  //Estamos creando una ruta que es para agregar un producto(llevara hacer un nuevo registro del producto//
-    res.render('agregar_producto')  //es lo que imprime//  
 });
 
 module.exports = router; 

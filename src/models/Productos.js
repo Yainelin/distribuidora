@@ -6,7 +6,7 @@ const productosSchema = new Schema({
     cantidad: {type: Number, require: true, trim: true },
     precio: { type: Number, require: true, trim: true  },
     descripcion: {type: String, require: true, trim: true, maxlength: 200 },
-    timestamp: {type: Date, default: Data.now}
+    timestamp: {type: Date, default: Date.now}
 });
 
 module.exports = model('productos', productosSchema);
