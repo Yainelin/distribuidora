@@ -2,7 +2,7 @@ const ctrl = {}
 const Clientes = require('../models/Clientes');
 
 ctrl.obtenerClientes= async (req, res) =>{  //Estamos creando una ruta que seria clientes//
-    const clientes= await Clientes.find({});
+    const clientes = await Clientes.find({});
     console.log(clientes);
     res.render('clientes', {clientes})  //es lo que imprime//  
 }
@@ -13,7 +13,9 @@ ctrl.agregarClientes = async (req, res) =>{  //Estamos creando una ruta que es p
 
 ctrl.guardarClientes = async (req, res) =>{
     const guardar = new Clientes(req.body);
+    // console.log(req.body);
     await guardar.save();
+
     res.redirect('/clientes');
 }  
 
@@ -24,16 +26,16 @@ ctrl.obtenercliente = async (req, res) => {
     res.render('editarcliente', {cliente}) 
 }
 
-ctrl.actualizarcliente = async (req, res) => {
-    const id = req.params.id;
-    await Clientes.findByIdAndUpdate(id, req.body);
-    res.redirect('/clientes');
-}
+// ctrl.actualizarcliente = async (req, res) => {
+//     const id = req.params.id;
+//     await Clientes.findByIdAndUpdate(id, req.body);
+//     res.redirect('/clientes');
+// }
 
-ctrl.eliminarcliente = async (req, res) => {
-    const id = req.params.id;
-    await Clientes.findByIdAndDelete(id);
-    res.redirect('/Clientes');
-}
+// ctrl.eliminarcliente = async (req, res) => {
+//     const id = req.params.id;
+//     await Clientes.findByIdAndDelete(id);
+//     res.redirect('/Clientes');
+// }
 
 module.exports = ctrl

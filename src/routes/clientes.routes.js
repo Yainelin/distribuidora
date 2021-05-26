@@ -3,17 +3,17 @@ const router = Router();
 //Controladores
 const ctrl = require('../controllers/clientes');
 
-router.get('/clientes', ctrl.obtenercliente);
+router.get('/clientes', ctrl.obtenerClientes);
 
-router.get('/agregar_cliente', ctrl.agregarcliente);
+router.get('/agregar_cliente', ctrl.agregarClientes);
 
-router.post('/agregar_cliente', ctrl.guardarcliente);
+router.post('/agregar_cliente', ctrl.guardarClientes);
 
-router.get('/cliente/:id', ctrl.obtenercliente); //Para traerme al cliente que se va actualizar datos o eliminar//
+router.get('/cliente/:id', ctrl.obtenerClientes); //Para traerme al cliente que se va actualizar datos o eliminar//
 
-router.post('/cliente/:id', ctrl.actualizarcliente); //Actualizar cliente//
+// router.post('/cliente/:id', ctrl.actualizarClientes); //Actualizar cliente//
 
-router.get('/producto/cliente/:id', ctrl.eliminarcliente); //Eliminar cliente//
+// router.get('/producto/cliente/:id', ctrl.eliminarcliente); //Eliminar cliente//
 
 
 

@@ -19,6 +19,7 @@ app.use(express.urlencoded({extended: false}));
 //Rutas
 app.use(require('./routes/index.routes'));  //Rutas 
 app.use(require('./routes/productos.routes')); 
+app.use(require('./routes/clientes.routes')); 
 //Archivos estaticos
 app.use(express.static(path.join(__dirname, 'public'))); //aca utilizo la carpeta public
 

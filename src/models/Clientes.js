@@ -6,7 +6,7 @@ const clientesSchema = new Schema({
     telefono: { type: Number, require: true, trim: true, maxlength: 30  },
     correo: {type: String, requere: true, trim: true, maxlength: 60, unique: true },
     Direccion: { type: String, require: true, trim: true, maxlength: 150 },
-    timestamp: {type: Date, default: Data.now}
+    timestamp: {type: Date, default: Date.now}
 });
 
 module.exports = model('clientes', clientesSchema);

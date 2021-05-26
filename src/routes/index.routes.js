@@ -9,11 +9,6 @@ router.get('/inicio', (req, res) =>{  //Estamos creando una ruta que seria inici
     res.render('inicio')  //es lo que imprime//  
 });
 
-
-router.get('/clientes', (req, res) =>{  //Estamos creando una ruta que seria clientes//
-    res.render('clientes')  //es lo que imprime//  
-});
-
 router.get('/ventas', (req, res) =>{  //Estamos creando una ruta que seria ventas//
     res.render('ventas')  //es lo que imprime//  
 });
