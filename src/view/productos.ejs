@@ -12,15 +12,19 @@
             <th scope="col">Nombre del producto</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Precio</th>
+            <th scope="col">
+              Eliminar
+            </th>
           </tr>
         </thead>
         <tbody>
           <%  for(let i = 0; i < productos.length; i++){ %>
               <tr>
                 <th scope="row"><%= productos[i].codigo %></th>
-                <td><%= productos[i].nombre %></td>
+                <td><a href="/producto/<%=  productos[i]._id %>"><%= productos[i].nombre %></a></td>
                 <td><%= productos[i].cantidad %></td>
                 <td><%= productos[i].precio %></td>
+                <td><a href="/producto/eliminar/<%=  productos[i]._id %>" class="btn btn-danger" >Eliminar</a></td>
               </tr>
            <% } %>
         </tbody>

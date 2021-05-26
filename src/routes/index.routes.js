@@ -25,8 +25,6 @@ router.get('/factura', (req, res) =>{  //Estamos creando una ruta que seria fact
 router.get('/cobranzas', (req, res) =>{  //Estamos creando una ruta que seria factura//
     res.render('cobranzas')  //es lo que imprime//  
 }); 
-router.get('/agregar_cliente', (req, res) =>{  //Estamos creando una ruta que agregar cliente(llevara para hacer el registro del cliente nuevo//
-    res.render('agregar_cliente')  //es lo que imprime//  
-});
+
 
 module.exports = router; 

@@ -1,45 +1,40 @@
 <%include includes/_header%> 
 
+
 <div class="container">
-    <h1>Clientes</h1>
-    <a href="/agregar_cliente" class="btn btn-primary">Agregar Cliente</a><br><br>
-    <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>#</th>
+  <h1>Lista de productos</h1>
+  <a href="/agregar_producto" class="btn btn-primary">Agregar Producto</a><br><br>
+
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
             <th scope="col">Cedula</th>
             <th scope="col">Nombre</th>
             <th scope="col">Apellido</th>
             <th scope="col">Telefono</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>01100</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>111</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            <td>4878</td>
-          </tr>
-    
-        </tbody>
-      </table>
 
+          <th scope="col">
+            Eliminar
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <%  for(let i = 0; i < clientes.length; i++){ %>
+            <tr>
+              <th scope="row"><%= clientes[i].codigo %></th>
+              <td><%= clientes[i].cedula %></td>
+              <td><a href="/cliente/<%=  cliente[i]._id %>"><%= clientes[i].nombre %></a></td>
+              <td><%= clientes[i].apellido%></td>
+              <td><%= clientes[i].telefono%></td>
+              <td><a href="/cliente/eliminar/<%=  cliente[i]._id %>" class="btn btn-danger" >Eliminar</a></td>
+            </tr>
+         <% } %>
+      </tbody>
+    </table>
 </div>
+
+
 
 
 <%include includes/_footer%>

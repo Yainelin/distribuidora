@@ -1,0 +1,42 @@
+<%include includes/_header %>
+
+<div class="d-flex justify-content-center">
+    <div class="col-md-5">
+        <form method="POST" action="/producto/<%= producto._id %>" class="card mb-5">
+            <div class="card-header bg-primary text-white">
+                <h3>Actualizar producto</h3>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" value="<%= producto.nombre %>" name="nombre" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Codigo de producto</label>
+                    <input type="text" name="codigo"  value="<%= producto.codigo %>" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Cantidad</label>
+                    <input type="text" value="<%= producto.cantidad %>" name="cantidad" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Precio</label>
+                    <input type="text" value="<%= producto.precio %>" name="precio" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea name="descripcion"  class="form-control" rows="10"><%= producto.descripcion %></textarea>
+                </div>
+
+                <button class="btn btn-primary btn-block">
+                    Actualizar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<%include includes/_footer %>
