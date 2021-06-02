@@ -9,11 +9,11 @@ router.get('/agregar_cliente', ctrl.agregarClientes);
 
 router.post('/agregar_cliente', ctrl.guardarClientes);
 
-router.get('/cliente/:id', ctrl.obtenerClientes); //Para traerme al cliente que se va actualizar datos o eliminar//
+router.get('/cliente/:id', ctrl.obtenerCliente); //Para traerme al cliente que se va actualizar datos o eliminar//
 
-// router.post('/cliente/:id', ctrl.actualizarClientes); //Actualizar cliente//
+router.post('/cliente/:id', ctrl.actualizarcliente); //Actualizar cliente//
 
-// router.get('/producto/cliente/:id', ctrl.eliminarcliente); //Eliminar cliente//
+router.get('/cliente/eliminar/:id', ctrl.eliminarcliente); //Eliminar cliente//
 
 
 

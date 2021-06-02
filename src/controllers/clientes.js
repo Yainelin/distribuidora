@@ -19,23 +19,23 @@ ctrl.guardarClientes = async (req, res) =>{
     res.redirect('/clientes');
 }  
 
-ctrl.obtenercliente = async (req, res) => {
+ctrl.obtenerCliente = async (req, res) => {
     const id = req.params.id;
     const cliente = await Clientes.findById(id);
     console.log(cliente);
     res.render('editarcliente', {cliente}) 
 }
 
-// ctrl.actualizarcliente = async (req, res) => {
-//     const id = req.params.id;
-//     await Clientes.findByIdAndUpdate(id, req.body);
-//     res.redirect('/clientes');
-// }
+ctrl.actualizarcliente = async (req, res) => {
+    const id = req.params.id;
+    await Clientes.findByIdAndUpdate(id, req.body);
+    res.redirect('/clientes');
+}
 
-// ctrl.eliminarcliente = async (req, res) => {
-//     const id = req.params.id;
-//     await Clientes.findByIdAndDelete(id);
-//     res.redirect('/Clientes');
-// }
+ctrl.eliminarcliente = async (req, res) => {
+    const id = req.params.id;
+    await Clientes.findByIdAndDelete(id);
+    res.redirect('/clientes');
+}
 
 module.exports = ctrl
