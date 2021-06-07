@@ -17,9 +17,6 @@ router.get('/factura', (req, res) =>{  //Estamos creando una ruta que seria fact
     res.render('factura')  //es lo que imprime//  
 });
 
-router.get('/cobranzas', (req, res) =>{  //Estamos creando una ruta que seria factura//
-    res.render('cobranzas')  //es lo que imprime//  
-}); 
 
 
 module.exports = router; 
