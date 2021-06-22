@@ -5,7 +5,7 @@ const clientesSchema = new Schema({
     cedula: {type: Number, require: true,  trim: true, maxlength: 30, unique: true},
     telefono: { type: Number, require: true, trim: true, maxlength: 30  },
     correo: {type: String, requere: true, trim: true, maxlength: 60, unique: true },
-    Direccion: { type: String, require: true, trim: true, maxlength: 150 },
+    direccion: { type: String, require: true, trim: true, maxlength: 150 },
     timestamp: {type: Date, default: Date.now}
 });
 

@@ -12,6 +12,8 @@
             <th scope="col">Cedula/Rif</th>
             <th scope="col">Nombre y Apellido</th>
             <th scope="col">Telefono</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Dirección</th>
             
 
           <th scope="col">
@@ -26,6 +28,8 @@
               <td><a href="/cliente/<%=  clientes[i]._id %>"><%= clientes[i].nombreyapellido %></a></td>
             
               <td><%= clientes[i].telefono%></td>
+              <td><%= clientes[i].correo%></td>
+              <td><%= clientes[i].direccion%></td>
               <td><a href="/cliente/eliminar/<%=  clientes[i]._id %>" class="btn btn-danger" >Eliminar</a></td>
             </tr>
          <% } %>
