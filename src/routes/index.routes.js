@@ -5,6 +5,23 @@ router.get('/', (req, res) =>{  //Estamos creando una ruta que seria //
     res.render('index')  //es lo que imprime//  
 });
 
+
+router.get('/registro', (req, res) =>{ 
+    res.render('registro')   
+});
+
+router.post('/registro', (req, res) =>{ 
+    res.render('registro')   
+});
+
+router.get('/login', (req, res) =>{ 
+    res.render('login')   
+});
+
+router.post('/login', (req, res) =>{ 
+    res.render('login')   
+});
+
 router.get('/inicio', (req, res) =>{  //Estamos creando una ruta que seria inicio //
     res.render('inicio')  //es lo que imprime//  
 });
