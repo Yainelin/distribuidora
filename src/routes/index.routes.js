@@ -11,11 +11,8 @@ router.get('/registro', (req, res) =>{
 });
 
 router.post('/registro', (req, res) =>{ 
-    res.render('registro')   
-});
-
-router.get('/login', (req, res) =>{ 
-    res.render('login')   
+    console.log(req.body);  
+    res.send('recibido'); 
 });
 
 router.post('/login', (req, res) =>{ 

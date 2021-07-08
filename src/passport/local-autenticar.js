@@ -1,0 +1,26 @@
+const passport = require ('passport');
+const localStrategy =  require('passport-local').Strategy; 
+
+const usuario = require ('../models/usuario');
+
+passport.serializeUser((usuario, done) => {
+     done(null, usuario.id);
+});
+
+passport.deserializeUser(async (id, done) => {
+     const usuario = await usuario.findById(id);
+     done(null, usuario);
+});
+
+
+passport.use('local-registro', new localStrategy({
+    usernameField: 'email',
+    passwordField: 'password',
+    passReqToCallback: true
+}, async (req, email, password, done) => {
+   const usuario =  new usuario();
+   usuario.email = email;
+   usuario.password = password; 
+   await usuario.save();
+   done(null, usuario);
+}));
