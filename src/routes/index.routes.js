@@ -1,9 +1,16 @@
 const {Router} = require('express'); //express trae una funsion llamada router// 
+const passport = require('passport');
 const router = Router();
 
 router.get('/', (req, res) =>{  //Estamos creando una ruta que seria //
     res.render('index')  //es lo que imprime//  
 });
+
+router.post('/login', passport.authenticate('localautenticar',{ 
+    successRedirect: '/ventas',
+    failureRedirect: '/',
+    passReqToCallback: true
+}));
 
 
 router.get('/registro', (req, res) =>{ 
@@ -15,13 +22,6 @@ router.post('/registro', (req, res) =>{
     res.send('recibido'); 
 });
 
-router.post('/login', (req, res) =>{ 
-    res.render('login')   
-});
-
-router.get('/inicio', (req, res) =>{  //Estamos creando una ruta que seria inicio //
-    res.render('inicio')  //es lo que imprime//  
-});
 
 router.get('/ventas', (req, res) =>{  //Estamos creando una ruta que seria ventas//
     res.render('ventas')  //es lo que imprime//  

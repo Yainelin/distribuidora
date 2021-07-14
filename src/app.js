@@ -4,11 +4,11 @@ const morgan = require('morgan');
 const path = require('path');
 const passport = require('passport'); 
 const session = require('express-session');
-
+const flash = require ('connect-flash');
 //Inicializacion
 const app = express(); //App es una variable, como la base del programa// 
 require('./config/db');
-require('./passport/local-autenticar');
+require('./passport/localautenticar');
 
 
 //Configuraciones
@@ -22,9 +22,15 @@ app.use(session({
      secret:  'mysecretsession', 
      resave: false,
      saveUninitialized: false,
-}))
-app.use(Passport.initialize());
+}));
+app.use(flash());
+app.use(passport.initialize());
 app.use(passport.session());
+
+app.use((req, res, next) => { 
+  app.locals.iniciar = req.flash('iniciar');
+  next(); 
+});
 
 //Rutas
 app.use(require('./routes/index.routes'));  //Rutas 
