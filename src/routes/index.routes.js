@@ -6,7 +6,7 @@ router.get('/', (req, res) =>{  //Estamos creando una ruta que seria //
     res.render('index')  //es lo que imprime//  
 });
 
-router.post('/login', passport.authenticate('localautenticar',{ 
+router.post('/login', passport.authenticate('local-login',{ 
     successRedirect: '/ventas',
     failureRedirect: '/',
     passReqToCallback: true
@@ -17,10 +17,11 @@ router.get('/registro', (req, res) =>{
     res.render('registro')   
 });
 
-router.post('/registro', (req, res) =>{ 
-    console.log(req.body);  
-    res.send('recibido'); 
-});
+router.post('/registro', passport.authenticate('local-registro',{ 
+    successRedirect: '/ventas',
+    failureRedirect: '/registro',
+    passReqToCallback: true   
+}));
 
 
 router.get('/ventas', (req, res) =>{  //Estamos creando una ruta que seria ventas//
