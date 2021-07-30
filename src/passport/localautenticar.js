@@ -45,11 +45,11 @@ passport.use('local-login', new localStrategy({
 
      const usuario = await Usuario.findOne({email: email});
      if (!usuario){
-          return done (null, false, req.flash('iniciar', 'Usuario no encontrado'));
+          return done (null, false, req.flash('iniciarlogin', 'Usuario no registrado'));
      }
 
      if(!usuario.comparePassword(password)){
-        return done(null, false, req.flash('iniciar','Clave incorrecta')); 
+        return done(null, false, req.flash('iniciarlogin','Clave incorrecta')); 
      }
      done(null, usuario); 
 }));

@@ -8,15 +8,15 @@
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 </head>
 <body>
-       <% if (iniciar) {
- 
-          <div> </div> 
-
-       <%} %>
    <div class="container p-3">
       <div class="d-flex justify-content-center">
          <div class="col-lg-5">
-           
+            <% if (iniciarlogin) { %>
+            
+               <div><%= iniciarlogin %></div>
+               
+             <% } %>
+
             <form action="/login" method="POST" class="card mt-5">
                <div class="card-header">
                   <h1>Login</h1>

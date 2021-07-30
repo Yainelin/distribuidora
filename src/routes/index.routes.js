@@ -23,6 +23,17 @@ router.post('/registro', passport.authenticate('local-registro',{
     passReqToCallback: true   
 }));
 
+router.get('/logout', (req, res, next) =>{
+    req.logout();
+    res.redirect('/')
+;});
+
+function isAuthentica(req, res, next) =>{
+    if(req.isAuthenticated()){
+        return next();
+    }
+};
+
 
 router.get('/ventas', (req, res) =>{  //Estamos creando una ruta que seria ventas//
     res.render('ventas')  //es lo que imprime//  

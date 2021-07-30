@@ -29,6 +29,7 @@ app.use(passport.session());
 
 app.use((req, res, next) => { 
   app.locals.iniciar = req.flash('iniciar');
+  app.locals.iniciarlogin = req.flash('iniciarlogin');
   next(); 
 });
 
