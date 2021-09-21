@@ -2,8 +2,8 @@ const ctrl = {}
 const Clientes = require('../models/Clientes');
 
 ctrl.obtenerClientes= async (req, res) =>{  //Estamos creando una ruta que seria clientes//
-    const clientes = await Clientes.find({});
-    console.log(clientes);
+    const clientes = await Clientes.find();
+    
     res.render('clientes', {clientes})  //es lo que imprime//  
 }
 
@@ -13,7 +13,8 @@ ctrl.agregarClientes = async (req, res) =>{  //Estamos creando una ruta que es p
 
 ctrl.guardarClientes = async (req, res) =>{
     const guardar = new Clientes(req.body);
-    // console.log(req.body);
+    console.log('---> lo que obtengo', req.body);
+    console.log('---> lo que se guarda',guardar);
     await guardar.save();
 
     res.redirect('/clientes');
